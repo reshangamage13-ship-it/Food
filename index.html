@@ -2,421 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FoodCourt.lk</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodCourtLK - Customer</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f7f7f7;
-      color: #222;
-    }
-
-    header {
-      background: #ff7a00;
-      color: white;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 28px;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-      url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4") center/cover;
-      color: white;
-      padding: 90px 8%;
-      text-align: left;
-    }
-
-    .hero h2 {
-      font-size: 42px;
-      max-width: 600px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 500px;
-      margin-bottom: 25px;
-    }
-
-    .hero input {
-      padding: 15px;
-      width: 320px;
-      border: none;
-      border-radius: 6px;
-    }
-
-    .hero button,
-    .btn {
-      padding: 14px 22px;
-      background: #ff7a00;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 40px 8%;
-    }
-
-    .section h2 {
-      margin-bottom: 25px;
-      font-size: 30px;
-    }
-
-    .restaurant-card {
-      background: white;
-      display: flex;
-      gap: 20px;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      align-items: center;
-    }
-
-    .restaurant-card img {
-      width: 180px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .categories {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 25px;
-    }
-
-    .categories span {
-      background: #fff0e1;
-      color: #ff7a00;
-      padding: 10px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-
-    .food-card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .food-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .food-info {
-      padding: 16px;
-    }
-
-    .food-info h3 {
-      margin-bottom: 8px;
-    }
-
-    .food-info p {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-weight: bold;
-      margin-bottom: 12px;
-      color: #ff7a00;
-    }
-
-    .cart, .dashboard {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      margin-top: 25px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 10px;
-    }
-
-    select, input[type="time"], input[type="text"], input[type="number"] {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .status-box {
-      background: #fff4e8;
-      padding: 18px;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#f6f6f6;color:#222}
+    header{background:#ff7a00;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center}
+    header a{color:white;text-decoration:none;font-weight:bold}
+    .hero{padding:70px 7%;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80") center/cover;color:white}
+    .hero h1{font-size:38px;margin-bottom:10px}
+    .hero p{font-size:18px;max-width:600px}
+    .section{padding:35px 7%}
+    .restaurant{background:white;padding:20px;border-radius:15px;box-shadow:0 3px 12px #0001;margin-bottom:25px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+    .card{background:white;border-radius:15px;box-shadow:0 3px 12px #0001;overflow:hidden}
+    .card img{width:100%;height:170px;object-fit:cover;background:#ddd}
+    .info{padding:15px}
+    .info h3{margin-bottom:8px}
+    .info p{font-size:14px;color:#555;margin-bottom:10px}
+    .price{font-weight:bold;color:#ff7a00;margin-bottom:12px}
+    button{background:#ff7a00;color:white;border:0;padding:12px 15px;border-radius:8px;font-weight:bold;cursor:pointer}
+    button:disabled{background:#999;cursor:not-allowed}
+    .cart{background:white;padding:20px;border-radius:15px;box-shadow:0 3px 12px #0001}
+    .row{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:10px 0}
+    input,select{width:100%;padding:12px;margin:8px 0 15px;border:1px solid #ccc;border-radius:8px}
+    .success{color:green;font-weight:bold;margin-top:15px}
+    footer{text-align:center;background:#222;color:white;padding:20px;margin-top:30px}
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>FoodCourt.lk</h1>
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#cart">Order</a>
-    <a href="#dashboard">Owner Dashboard</a>
-  </nav>
+  <h2>FoodCourtLK</h2>
+  <a href="owner.html">Restaurant Owner Login</a>
 </header>
 
 <section class="hero">
-  <h2>Order Your Favourite Meals Before You Arrive</h2>
-  <p>Choose a restaurant, select meals, pay by cash or card, and collect without waiting.</p>
-  <input type="text" placeholder="Search restaurant or food..." />
-  <button>Search</button>
+  <h1>Order Before You Arrive</h1>
+  <p>Malith can order meals from Family Restaurant and collect without waiting.</p>
 </section>
 
 <section class="section">
-  <h2>Family Restaurant</h2>
-
-  <div class="restaurant-card">
-    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Restaurant">
-    <div>
-      <h3>Family Restaurant</h3>
-      <p>Sri Lankan • Chinese • Seafood • Beverages</p>
-      <p>⭐ 4.5 | Pickup Time: 20 - 30 mins</p>
-    </div>
+  <div class="restaurant">
+    <h2>Family Restaurant</h2>
+    <p>Sri Lankan Foods • Snacks • Seafood • Rice • Beverages</p>
+    <p><b>Pickup:</b> 20 - 30 minutes</p>
   </div>
 
-  <div class="categories">
-    <span>Breakfast</span>
-    <span>Snacks</span>
-    <span>Seafood</span>
-    <span>Chicken</span>
-    <span>Rice / Noodles</span>
-    <span>Beverages</span>
-    <span>Desserts</span>
-  </div>
+  <h2>Available Menu</h2>
+  <br>
+  <div class="grid" id="menuGrid"></div>
 </section>
 
-<section class="section" id="menu">
-  <h2>Menu Items</h2>
-
-  <div class="menu-grid">
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666" alt="English Breakfast">
-      <div class="food-info">
-        <h3>English Breakfast</h3>
-        <p>Bacon, sausages, baked beans, tomato, mushroom, toast, two fried eggs.</p>
-        <div class="price">LKR 1950</div>
-        <button class="btn" onclick="addToCart('English Breakfast',1950)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burger">
-      <div class="food-info">
-        <h3>Pulled Chicken Burger</h3>
-        <p>Fresh bun with pulled chicken, sauce, lettuce and cheese.</p>
-        <div class="price">LKR 1450</div>
-        <button class="btn" onclick="addToCart('Pulled Chicken Burger',1450)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Rice">
-      <div class="food-info">
-        <h3>Nasi Goreng Rice</h3>
-        <p>Special fried rice with chicken, seafood, egg and spicy flavour.</p>
-        <div class="price">LKR 1250</div>
-        <button class="btn" onclick="addToCart('Nasi Goreng Rice',1250)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" alt="Prawns">
-      <div class="food-info">
-        <h3>Devilled Prawns</h3>
-        <p>Medium prawns with devilled sauce, hot garlic or sweet and sour style.</p>
-        <div class="price">LKR 2400</div>
-        <button class="btn" onclick="addToCart('Devilled Prawns',2400)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6" alt="Soup">
-      <div class="food-info">
-        <h3>Tom Yam Soup</h3>
-        <p>Seafood soup with spicy Thai flavour.</p>
-        <div class="price">LKR 950</div>
-        <button class="btn" onclick="addToCart('Tom Yam Soup',950)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" alt="Drink">
-      <div class="food-info">
-        <h3>Ice Lemon Tea</h3>
-        <p>Cold refreshing lemon tea.</p>
-        <div class="price">LKR 450</div>
-        <button class="btn" onclick="addToCart('Ice Lemon Tea',450)">Add to Cart</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="cart">
+<section class="section">
   <h2>Your Order</h2>
-
+  <br>
   <div class="cart">
     <div id="cartItems"></div>
     <h3>Total: LKR <span id="total">0</span></h3>
 
-    <br>
+    <label>Customer Name</label>
+    <input id="customerName" placeholder="Example: Malith">
+
     <label>Pickup Time</label>
-    <input type="time">
+    <input id="pickupTime" type="time">
 
     <label>Payment Method</label>
-    <select>
+    <select id="payment">
       <option>Cash at Restaurant</option>
       <option>Card Payment</option>
-      <option>Online Payment</option>
     </select>
 
-    <label>Special Note</label>
-    <input type="text" placeholder="Example: Less spicy, no onion">
-
-    <button class="btn" onclick="placeOrder()">Place Order</button>
-
-    <h3 id="orderStatus" style="margin-top:20px;color:green;"></h3>
+    <button onclick="placeOrder()">Place Order</button>
+    <p class="success" id="message"></p>
   </div>
 </section>
 
-<section class="section" id="dashboard">
-  <h2>Restaurant Owner Dashboard</h2>
-
-  <div class="dashboard">
-    <div class="dashboard-grid">
-
-      <div class="status-box">
-        <h3>Add / Edit Menu</h3>
-        <input type="text" placeholder="Food item name">
-        <input type="number" placeholder="Price">
-        <input type="text" placeholder="Image URL">
-        <button class="btn">Update Menu</button>
-      </div>
-
-      <div class="status-box">
-        <h3>Restaurant Time</h3>
-        <label>Opening Time</label>
-        <input type="time">
-        <label>Closing Time</label>
-        <input type="time">
-        <button class="btn">Save Time</button>
-      </div>
-
-      <div class="status-box">
-        <h3>Order Preparation Time</h3>
-        <input type="number" placeholder="Preparation time in minutes">
-        <button class="btn">Update Time</button>
-      </div>
-
-      <div class="status-box">
-        <h3>Order Status</h3>
-        <select>
-          <option>Order Received</option>
-          <option>Preparing</option>
-          <option>Ready for Pickup</option>
-          <option>Collected</option>
-        </select>
-        <button class="btn">Update Status</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 FoodCourt.lk | Sri Lankan Takeaway Ordering Website</p>
-</footer>
+<footer>© 2026 FoodCourtLK</footer>
 
 <script>
   let cart = [];
   let total = 0;
 
-  function addToCart(item, price) {
-    cart.push({ item, price });
-    total += price;
-    displayCart();
+  const defaultFoods = [
+    {
+      name:"English Breakfast",
+      price:1950,
+      time:"20 mins",
+      desc:"Bacon, sausages, beans, grilled tomato, mushroom, toast and fried eggs.",
+      img:"https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
+      available:true
+    },
+    {
+      name:"Pulled Chicken Burger",
+      price:1450,
+      time:"15 mins",
+      desc:"Chicken burger with fresh bun, sauce and salad.",
+      img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      available:true
+    },
+    {
+      name:"Nasi Goreng Rice",
+      price:1250,
+      time:"15 mins",
+      desc:"Special fried rice with chicken, seafood and egg.",
+      img:"https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80",
+      available:true
+    }
+  ];
+
+  function getFoods(){
+    let foods = localStorage.getItem("foods");
+    if(!foods){
+      localStorage.setItem("foods", JSON.stringify(defaultFoods));
+      return defaultFoods;
+    }
+    return JSON.parse(foods);
   }
 
-  function displayCart() {
-    let cartItems = document.getElementById("cartItems");
-    cartItems.innerHTML = "";
+  function showMenu(){
+    const foods = getFoods();
+    const menuGrid = document.getElementById("menuGrid");
+    menuGrid.innerHTML = "";
 
-    cart.forEach((food) => {
+    foods.forEach((food, index) => {
+      menuGrid.innerHTML += `
+        <div class="card">
+          <img src="${food.img}" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'">
+          <div class="info">
+            <h3>${food.name}</h3>
+            <p>${food.desc}</p>
+            <p><b>Ready in:</b> ${food.time}</p>
+            <div class="price">LKR ${food.price}</div>
+            <button ${food.available ? "" : "disabled"} onclick="addToCart(${index})">
+              ${food.available ? "Add to Cart" : "Out of Stock"}
+            </button>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function addToCart(index){
+    const food = getFoods()[index];
+    cart.push(food);
+    total += Number(food.price);
+    showCart();
+  }
+
+  function showCart(){
+    const cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = "";
+    cart.forEach(food => {
       cartItems.innerHTML += `
-        <div class="cart-item">
-          <span>${food.item}</span>
+        <div class="row">
+          <span>${food.name}</span>
           <span>LKR ${food.price}</span>
         </div>
       `;
     });
-
     document.getElementById("total").innerText = total;
   }
 
-  function placeOrder() {
-    document.getElementById("orderStatus").innerText =
-      "Order placed successfully! Your meal will be ready for pickup.";
+  function placeOrder(){
+    if(cart.length === 0){
+      alert("Please add food items first.");
+      return;
+    }
+
+    const order = {
+      customer: document.getElementById("customerName").value || "Customer",
+      pickupTime: document.getElementById("pickupTime").value,
+      payment: document.getElementById("payment").value,
+      items: cart,
+      total: total,
+      status: "Order Received"
+    };
+
+    let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+    orders.push(order);
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    document.getElementById("message").innerText = "Order placed successfully. Food will be ready for pickup.";
+    cart = [];
+    total = 0;
+    showCart();
   }
+
+  showMenu();
 </script>
 
 </body>

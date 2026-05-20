@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Owner Login</title>
+
+<style>
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f4f4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.login-box{
+  background:white;
+  padding:40px;
+  border-radius:15px;
+  width:350px;
+  text-align:center;
+  box-shadow:0 3px 15px rgba(0,0,0,0.1);
+}
+
+button{
+  background:#ff7a00;
+  color:white;
+  border:none;
+  padding:14px 20px;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  width:100%;
+}
+
+img{
+  width:80px;
+  margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+
+<h2>Restaurant Owner Login</h2>
+
+<p>Login using Gmail account</p>
+
+<button onclick="loginWithGoogle()">
+Login With Gmail
+</button>
+
+<p id="userInfo"></p>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDyPea6mPJiWM0Jb9BzhYDBGVXbae8tx34",
+  authDomain: "foodcourtlk-a8451.firebaseapp.com",
+  projectId: "foodcourtlk-a8451",
+  storageBucket: "foodcourtlk-a8451.firebasestorage.app",
+  messagingSenderId: "266192608418",
+  appId: "1:266192608418:web:eb96abbd6a89ec70504bfb",
+  measurementId: "G-LXHQ8H09X3"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+window.loginWithGoogle = async function(){
+
+  try{
+
+    const result = await signInWithPopup(auth, provider);
+
+    const user = result.user;
+
+    document.getElementById("userInfo").innerHTML =
+      `
+      <br>
+      <b>Welcome:</b> ${user.displayName}
+      <br>
+      ${user.email}
+      <br><br>
+      Login Successful
+      `;
+
+    localStorage.setItem("ownerName", user.displayName);
+    localStorage.setItem("ownerEmail", user.email);
+
+  } catch(error){
+
+    alert(error.message);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
